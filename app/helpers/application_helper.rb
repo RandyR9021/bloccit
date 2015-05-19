@@ -1,4 +1,6 @@
 module ApplicationHelper
-    def my_name
-end
-    end 
+  
+  def my_name
+  	"Randy Richards"
+  end
+end 
