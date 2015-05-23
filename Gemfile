@@ -13,6 +13,7 @@ group :production do
    gem 'sqlite3'
  end
 gem 'bootstrap-sass'
+gem 'faker'
 gem 'pry-rails', :group => :development
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
