@@ -1,5 +1,8 @@
 require 'faker'
 
+#use find_or_create_by
+#or use Post.where(title:"unique title").count==0
+
 # Create Posts
 50.times do
     Post.create!(
