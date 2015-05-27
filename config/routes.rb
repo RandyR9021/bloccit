@@ -1,8 +1,15 @@
 Bloccit::Application.routes.draw do
+<<<<<<< HEAD
   resources :posts
   get 'about' => 'welcome#about'
   root to: 'welcome#index'
   
+=======
+    resources :posts
+    get 'about' => 'welcome#about'
+  root to: 'welcome#index'
+   
+>>>>>>> checkpoint-27-crud
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
