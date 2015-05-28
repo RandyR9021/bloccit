@@ -12,6 +12,7 @@ group :production do
  group :development do
    gem 'sqlite3'
  end
+gem 'devise'
 gem 'bootstrap-sass'
 gem 'faker'
 gem 'pry-rails', :group => :development
