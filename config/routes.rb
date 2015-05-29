@@ -1,7 +1,8 @@
 Bloccit::Application.routes.draw do
+     resources :questions
      resources :posts
     get 'about' => 'welcome#about'
-  root to: 'welcome#index'
+    root to: 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
