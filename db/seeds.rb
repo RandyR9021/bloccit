@@ -42,6 +42,14 @@ posts = Post.all
     )
 end
 
+user = User.first
+user.skip_reconfirmation!
+user.update_attributes!(
+    email: 'rdj7890@gmail.com',
+    password: 'january45'
+)
+
 puts "Seed finished"
+puts "#{User.count} users created"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
