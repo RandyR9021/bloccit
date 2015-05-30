@@ -13,6 +13,7 @@ group :production do
    gem 'sqlite3'
  end
 gem 'devise'
+gem 'pundit'
 gem 'figaro'
 gem 'bootstrap-sass'
 gem 'faker'
