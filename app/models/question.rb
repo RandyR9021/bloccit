@@ -11,5 +11,5 @@
 #
 
 class Question < ActiveRecord::Base
- has many :answers
+ has_many :answers
 end
