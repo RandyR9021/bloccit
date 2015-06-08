@@ -15,14 +15,14 @@ class PostsController < ApplicationController
   end
   def create
       @post = current_user.posts.build(params.require(:post).permit(:title, :body)
-        if @post.save
-          flash[:notice] = "Post was saved."
+      if @post.save
+         flash[:notice] = "Post was saved."
           redirect_to @post
-          else
-          flash[:error] = "There was an error saving the post. Please try again."
-          render :new
-      end
-          end
+           else
+            flash[:error] = "There was an error saving the post. Please try again."
+             render :new
+  end
+end
       
  
 def edit
