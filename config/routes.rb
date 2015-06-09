@@ -1,12 +1,16 @@
 Bloccit::Application.routes.draw do
-     devise_for :users
-     resources :users, only: [:update]
-     resources :topics do
-     resources :posts, except: [:index]
-     end 
+
+
+  devise_for :users
+  resources :users, only: [:update]
+  resources :topics do
+    resources :posts, except: [:index] do
+      resources :summaries, except: [:index]
+    end
+  end 
     
-    get 'about' => 'welcome#about'
-     root to: 'welcome#index'
+  get 'about' => 'welcome#about'
+  root to: 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
