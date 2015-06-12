@@ -19,6 +19,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 gem 'figaro'
+gem 'will_paginate', '~> 3.0.5'
 gem 'bootstrap-sass'
 gem 'faker'
 gem 'pry-rails', :group => :development
