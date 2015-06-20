@@ -15,7 +15,7 @@ users = User.all
 
 # Create Topics
 
-15.times do
+75.times do
     Topic.create!(
     name: Faker::Lorem.sentence,
     description: Faker::Lorem.paragraph
@@ -36,7 +36,7 @@ topics = Topic.all
 #or use Post.where(title:"unique title").count==0
 
 # Create Posts
-50.times do
+150.times do
     Post.create!(
       user: users.sample,
       topic: topics.sample,
