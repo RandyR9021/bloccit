@@ -15,6 +15,7 @@
     <% end %>
   </div>
     <div class="col-md-8">
+      <% @comments.each do |comment| %>
       <%= render partial: "comments/form", locals: {topic: @topic, post: @post, comment: @comment} %>
     </div>
   </div>
