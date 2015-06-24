@@ -41,17 +41,8 @@ class TopicsController < ApplicationController
        render :edit
      end
    end
-<<<<<<< HEAD
- end
 
-private 
-  
-  def topic_params
-    params.require(:topic).permit(:name, :description, :public)
-  end 
-=======
-   
-    def destroy
+   def destroy
      @topic = Topic.find(params[:id])
  
      authorize @topic
@@ -63,5 +54,12 @@ private
        render :show
      end
    end
+
+  private 
+  
+  def topic_params
+    params.require(:topic).permit(:name, :description, :public)
+  end 
+
  end 
->>>>>>> checkpoint-47-destroy
+
