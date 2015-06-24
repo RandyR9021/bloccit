@@ -3,8 +3,7 @@ class PostsController < ApplicationController
   	@posts = Post.all
   end
 
-  def show
-  end
+
 
   def show
     @post = Post.find(params[:id])
@@ -14,15 +13,15 @@ class PostsController < ApplicationController
       @post = Post.new
   end
   def create
-      @post = current_user.posts.build(params.require(:post).permit(:title, :body)
+      @post = current_user.posts.build(params.require(:post).permit(:title, :body))
       if @post.save
          flash[:notice] = "Post was saved."
           redirect_to @post
            else
             flash[:error] = "There was an error saving the post. Please try again."
              render :new
+    end
   end
-end
       
  
 def edit
