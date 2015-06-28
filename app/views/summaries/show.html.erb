@@ -1,2 +1,6 @@
 <h1>Summaries#show</h1>
-<p>Find me in app/views/summaries/show.html.erb</p>
+<% if @summary %>
+   <p><%= @summary.description %></p>
+<% else %>
+   <p> No Summary </p>
+<% end %>
