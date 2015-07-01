@@ -2,11 +2,19 @@ class CommentsController < ApplicationController
   def create
   	@topic = Topic.find(params[:topic_id])
   	@post = Post.find(params[:post_id])
-  	@comment = current_user.comments.build(params[:comment])
+  	@comment = current_user.comments.build(params[:id])
   	@comment.post = @post
-  	authorize @comment, message: "You must be a registered user to comment."
+  	authorize @comment
   	if @comment.save
-  end
+  		flash[:notice] = "Comment was created successfully."
+  		redirect_to [@topic, @post]
+  	else
+  		flash[:error] = "There was an error posting your comment. Please try again."
+  		redirect_to [@topic, @post]
+  	end 
+  end 
+  	
+  
   def destroy
  	  @topic = Topic.find(params[:topic_id])
  	  @post = @topic.posts.find(params[:post_id])
