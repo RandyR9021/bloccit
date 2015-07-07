@@ -4,7 +4,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @topic = Topic.find(params[:topic_id])
     @topic = @post.topic
-    @comment = Comment.new
+    @comments = @post.comments
     #authorize @comment
   end
 
