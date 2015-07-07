@@ -26,6 +26,6 @@
       <%= render partial: 'comments/comment', collection: @comments %>
       <% if current_user != nil %>
         <%= render partial: "comments/form", locals: {topic: @topic, post: @post, comment: @comment} %>
-     <% end %>
+      <% end %>
     </div>
   </div>
