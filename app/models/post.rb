@@ -33,5 +33,11 @@ class Post < ActiveRecord::Base
      def create_vote
         user.votes.create(value: 1, post: self)
      end 
-   end 
 
+     def save_with_initial_vote
+        #ActiveRecord::Base.transaction do
+           self.save
+           #self.create_vote #=> throws error
+        #end 
+     end 
+  end 
