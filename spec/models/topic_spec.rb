@@ -1,21 +1,35 @@
+# == Schema Information
+#
+# Table name: topics
+#
+#  id          :integer          not null, primary key
+#  name        :string
+#  public      :boolean          default(TRUE)
+#  description :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+require 'rails_helper'
+
 describe Topic do
    
    describe "scopes" do
  
      before do 
-       @public_topic = Topic.create # default is public
-       @private_topic = Topic.create(public: false)
+       @public_topic = Topic.create(name: "hello", description:"this is a description") # default is public
+       @private_topic = Topic.create(name: "hello", description:"this is a description", public: false)
      end
  
      describe "publicly_viewable" do
        it "returns a relation of all public topics" do
-         expect(Topic.publicly_viewable).to eq([@public_topic])
+         expect(Topic.publicly_viewable.to_a).to eq([@public_topic])
        end
      end
  
      describe "privately_viewable" do
        it "returns a relation of all private topics" do
-         expect(Topic.privately_viewable).to  eq([@private_topic])
+         expect(Topic.privately_viewable.to_a).to  eq([@private_topic])
        end
      end
  
