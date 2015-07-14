@@ -35,9 +35,9 @@ class Post < ActiveRecord::Base
      end 
 
      def save_with_initial_vote
-        #ActiveRecord::Base.transaction do
-           self.save
-           #self.create_vote #=> throws error
-        #end 
+        ActiveRecord::Base.transaction do
+           self.save!
+           self.create_vote #=> throws error
+        end 
      end 
   end 

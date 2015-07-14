@@ -23,6 +23,7 @@ class PostsController < ApplicationController
   def create
       @topic = Topic.find(params[:topic_id])
       @post = current_user.posts.build(post_params)
+      @post.topic = @topic
       authorize @post
       if @post.save_with_initial_vote
         flash[:notice] = "Post was saved."
