@@ -7,8 +7,7 @@ gem 'rails', '4.2.1'
 group :production do
    gem 'pg'
    gem 'rails_12factor'
-   gem 'newrelic_rpm'
- end 
+end 
  
  group :development do
    gem 'sqlite3'
@@ -20,6 +19,8 @@ group :production do
   gem 'capybara'
  end 
 gem 'devise'
+gem 'newrelic_rpm'
+gem 'puma'
 gem 'redcarpet'
 gem 'pundit'
 gem 'carrierwave'
