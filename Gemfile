@@ -14,7 +14,6 @@ group :production do
    gem 'sqlite3'
    gem 'better_errors'
    gem 'binding_of_caller'
-   gem 'newrelic_rpm'
  end
  group :development, :test do
  	gem 'rspec-rails', '~> 3.0'
