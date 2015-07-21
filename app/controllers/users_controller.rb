@@ -9,17 +9,23 @@ class UsersController < ApplicationController
 			flash[:error] = "Invalid user information"
 			redirect_to edit_user_registration_path
 		end 
+	end
 	
 	def show
 		@user = User.find(params[:id])
 		@posts = @user.posts.visible_to(current_user)
+		puts current_user
+		puts Topic.first.public
+		puts @posts.count
+		if @posts.first
+			puts @posts.first.user.id
+		end
 		@comments = @user.comments
   end 
 
   def index 
   	@users = User.top_rated.paginate(page: params[:page], per_page: 10)
   end 
-end 
 
 	private 
 

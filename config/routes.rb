@@ -11,13 +11,13 @@ Bloccit::Application.routes.draw do
     resources :posts, only: [:index, :show] do
       resources :comments, only: [:create, :destroy]
       resources :favorites, only: [:create, :destroy]
-    post '/up-vote' => 'votes#up_vote', as: :up_vote
-     post '/down-vote' => 'votes#down_vote', as: :down_vote
-    end 
+      post '/up-vote' => 'votes#up_vote', as: :up_vote
+       post '/down-vote' => 'votes#down_vote', as: :down_vote
+      end 
 
      get 'about' => 'welcome#about'
      root to: 'welcome#index'
-   end 
+    end 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
