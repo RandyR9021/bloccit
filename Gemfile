@@ -20,6 +20,7 @@ end
  end 
 gem 'devise'
 gem 'newrelic_rpm'
+gem 'factory_girl_rails', '~> 4.0'
 gem 'puma'
 gem 'redcarpet'
 gem 'pundit'
